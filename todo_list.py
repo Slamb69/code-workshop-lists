@@ -18,13 +18,32 @@ def add_to_list(my_list):
      
     #print "The add_to_list function has not yet been written"
 
-
 def view_list(my_list):
     """Print each item in the list."""
     
     for each in my_list:
         print each
     #print "The view_list function has not yet been written"
+
+def delete_first_list_item(my_list):
+    """Delete the first item from the list"""
+    if my_list==[]:
+        print "Nothing to delete"
+        return None
+    else:
+        del my_list[0]  
+        return my_list
+
+def insert_in_position(my_list):
+    """Inserts an item in a particular position in the list"""
+    #print "Please input the index within the list"
+    item = raw_input("Which item would you like to insert? ")
+    print "The length of your list is", len(my_list), "items"
+    position=int(raw_input("At which position would you like to insert the item? "))
+    if position > len(my_list)+1:
+        print "Your list isn't that long. Try again! "
+    else:
+        return my_list.insert(position-1,item)
 
 
 def display_main_menu(my_list):
@@ -34,7 +53,9 @@ def display_main_menu(my_list):
     \nWould you like to:
     A. Add a new item
     B. View list
-    C. Quit the program
+    C. Delete the first list item
+    D. Insert item into a specific position in the list
+    Q. Quit the program
     >>> """
     
     while True:
@@ -47,6 +68,10 @@ def display_main_menu(my_list):
         elif choice == "B":
             view_list(my_list)
         elif choice == "C":
+            delete_first_list_item(my_list)
+        elif choice == "D":
+            insert_in_position(my_list)
+        elif choice == "Q":
             break
         else:
             print 'Unknown option.'
