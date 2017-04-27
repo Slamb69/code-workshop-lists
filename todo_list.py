@@ -45,6 +45,14 @@ def insert_in_position(my_list):
     else:
         return my_list.insert(position-1,item)
 
+def edit_item(my_list):
+    """Edits an item by reassigning the index position"""
+    print "Here's your list: ", view_list(my_list)
+    edit_item = raw_input("Which item do you want to edit? ")
+    replacement_item = raw_input("What is the replacement item? ")
+    
+
+
 
 def display_main_menu(my_list):
     """Displays main options, takes in user input, and calls view or add function."""
@@ -55,6 +63,7 @@ def display_main_menu(my_list):
     B. View list
     C. Delete the first list item
     D. Insert item into a specific position in the list
+    E. Edit an existing item 
     Q. Quit the program
     >>> """
     
@@ -71,6 +80,8 @@ def display_main_menu(my_list):
             delete_first_list_item(my_list)
         elif choice == "D":
             insert_in_position(my_list)
+        elif choice == "E":
+            edit_item(my_list)
         elif choice == "Q":
             break
         else:
